@@ -10,7 +10,7 @@ const ChatInterface = () => {
     }
 
     return (
-        <div>
+        <div className="border-b-2 pb-2 h-5/6">
             {/* Sender */}
             <div className="sender flex gap-2 p-1 w-auto">
                 <img className="w-10 h-10 rounded" src={data[0]?.image} alt={data[0]?.name} />

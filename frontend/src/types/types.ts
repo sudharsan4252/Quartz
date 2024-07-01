@@ -20,3 +20,11 @@ export interface ChatProfiles{
     name: string;
     message:string[];
 }
+
+export interface ChatLog{
+    id:string;
+    image:string;
+    name:string;
+    time:string;
+    newtime?:string;
+}

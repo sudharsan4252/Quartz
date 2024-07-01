@@ -1,11 +1,13 @@
 import  { createContext, ReactNode, FC } from "react";
-import {ChatBarProps} from "../types/types"
+import {ChatBarProps,ChatLog} from "../types/types"
+import chatdata from "../assets/assets";
+export const StoreContext = createContext<StoreContextProps | null>(null);
+
 interface StoreContextProps {
     url: number;
     Chat_list:ChatBarProps[];
+    chat_data:ChatLog[];
 }
-
-export const StoreContext = createContext<StoreContextProps | null>(null);
 
 interface StoreContextProviderProps {
     children: ReactNode;
@@ -31,10 +33,13 @@ const StoreContextProvider: FC<StoreContextProviderProps> = ({ children }) => {
     status:false,
 },
 ];
+const chat_data:ChatLog[]=chatdata;
 
+    // definening what are values we are gonna pass to them
     const contextValue: StoreContextProps = {
         url,
         Chat_list,
+        chat_data,
     };
 
     return (
